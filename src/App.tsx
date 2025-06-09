@@ -1,26 +1,21 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import { Button } from "./components/atoms/button/Button";
 
-function App() {
+const App = () => {
   const [count, setCount] = useState<number>(0);
 
+  console.log(count, "COUNT VARIABLE");
   return (
     <main>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
+      <h1>Liquidity Tools</h1>
+      <form>
+        <input />
+      </form>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+        <Button disabled={count === 5} onClick={() => setCount(count + 1)}>
+          {count} Active Users
+        </Button>
         <p>
           Hola Joshue, como estas? Espero que estes ben! ¡No andes de malas
           pulgas!
@@ -31,6 +26,6 @@ function App() {
       </p>
     </main>
   );
-}
+};
 
 export default App;
